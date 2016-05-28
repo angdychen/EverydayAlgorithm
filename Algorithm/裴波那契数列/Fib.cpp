@@ -6,6 +6,7 @@
 using namespace std;
 
 // 算法一:递归算法 时间复杂度: c^n 指数级别
+//     (3/2)^i < F(i) < (5/3)^ i
 // 最糟糕的递归方式之一
 int fib(int n)
 {
