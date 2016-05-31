@@ -51,7 +51,7 @@ using namespace std;
 #define NO_MAJORITY INT_MIN
 
 
-// 算法一:穷举法
+// 算法一:穷举法 o(n^2)
 static int majEle_exhaust(int a[], int n)
 {
     int i,j;
@@ -73,8 +73,8 @@ static int majEle_loop(int a[], int n)
 {
     int element = a[0];
     int *dArr = new int[n];
-    int count = 0;  // 裁减过程中遇到相同元素的个数
-    int del = 0;    // 纪录删除元素的个数
+    int count = 0;  // 裁减过程中遇到相同元素的个数(1 ,2  有两个相等的元素了)
+    int del = 0;    // 纪录删除元素的个数        (1,2 不等, 删除两个)
     int dTop = 0;   // 当前裁减数组的索引位置
 
     for(int i=0; i<n; i++)
@@ -144,7 +144,7 @@ static int majEle_recursice(int a[], int n)
 }
 
 int main() {
-    int a[9] = {1,2,2,1,2,9,2,5,3};
+    int a[9] = {2,1,2,9,2,3,2};
     cout << "majEle_exhaust: " << majEle_exhaust(a, 9) << endl;
     cout << "majEle_recursice: " << majEle_recursice(a, 9) << endl;
     cout << "majEle_loop: " << majEle_loop(a, 9) << endl;
