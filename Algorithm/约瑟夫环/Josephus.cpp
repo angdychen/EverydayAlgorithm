@@ -43,16 +43,11 @@
 #include <iostream>
 using namespace std;
 
-
 // 算法二: 利用数组
 void josephusArray(int n, int m)
 {
     int jos[n];
-    memset(jos,0,sizeof(int)*n);
-    for(int j =0 ;j<n ;j++)
-    {
-        jos[j] = 0;
-    }
+    for(int j =0 ;j<n ;j++)     jos[j] = 0;
     int count = 0;      // 每报数到第m个元素时,出列
     int people = 0;     // 已经出列的人数
     int i = 0;          // 从0开始报数
@@ -97,10 +92,10 @@ int main()
     int m = 3;
     cout << "Josephus Ring (" << n << "," << m << ")" << endl;
 
-    cout << "算法二:\n整个环的出列顺序为:\n";
+    cout << "算法二(时间复杂度O (mn)):\n整个环的出列顺序为:\n";
     josephusArray(n,m);
 
-    cout << "\n\n算法三:\n最后退出的编号为:" << josephusMath(n, m) << endl;
+    cout << "\n\n算法三(时间复杂度O (n):\n最后退出的编号为:" << josephusMath(n, m) << endl;
 
     return 0;
 }
