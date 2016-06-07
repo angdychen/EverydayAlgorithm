@@ -39,6 +39,9 @@ Position First(List L);
 Position Advance(Position P);
 Element Retrieve(Position P);
 
+// 单链表链表反转
+List Reverse(List L);
+
 // 即CreatEmptyList,创建一个空链表
 List MakeEmpty()
 {
@@ -157,6 +160,28 @@ void TraversalList(List L)
     }
     cout << "" << endl;
     cout << "当前list中元素总个数为: " << count << endl;
+}
+
+// 单链表反转
+List Reverse(List L)
+{
+    Position Header, PreCell, CurCell, NextCell;
+    Header = L;             // 得到头节点
+    PreCell = L->next;      // 第一个节点
+    CurCell = PreCell->next;// 第二个节点
+    if(PreCell == NULL || CurCell == NULL)
+        return Header;
+
+    PreCell->next = NULL;
+    while(CurCell!=NULL)
+    {
+        NextCell = CurCell->next;
+        CurCell->next = PreCell;
+        PreCell = CurCell;
+        CurCell = NextCell;
+    }
+    Header->next = PreCell;
+    return Header;
 }
 
 #endif //ALGORITHM_LIST_H

@@ -23,8 +23,13 @@ int main()
     TraversalList(list);
 
     Position TmpCell = Find(100, list) ;
-    TmpCell== NULL ? cout << "未找到元素" <<endl
-                   : cout<< "所查找元素为:"<< TmpCell->data << endl;
+    TmpCell== NULL ? cout << "\n未找到元素" <<endl
+                   : cout<< "\n所查找元素为:"<< TmpCell->data << endl;
+
+
+    cout << "\n单链表反转:" << endl;
+    Reverse(list);
+    TraversalList(list);
 
     DeleteList(list);
     TraversalList(list);
