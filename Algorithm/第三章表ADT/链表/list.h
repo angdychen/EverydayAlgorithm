@@ -39,7 +39,6 @@ Position First(List L);
 Position Advance(Position P);
 Element Retrieve(Position P);
 
-// 单链表链表反转
 List Reverse(List L);
 
 // 即CreatEmptyList,创建一个空链表
@@ -168,11 +167,11 @@ List Reverse(List L)
     Position Header, PreCell, CurCell, NextCell;
     Header = L;             // 得到头节点
     PreCell = L->next;      // 第一个节点
-    CurCell = PreCell->next;// 第二个节点
-    if(PreCell == NULL || CurCell == NULL)
+    CurCell = PreCell->next;                // 第二个节点
+    if(PreCell == NULL || CurCell == NULL)  // 如果0个或1个节点
         return Header;
 
-    PreCell->next = NULL;
+    PreCell->next = NULL;   // 特别注意第一个节点要回空(否则将进入死循环)
     while(CurCell!=NULL)
     {
         NextCell = CurCell->next;
