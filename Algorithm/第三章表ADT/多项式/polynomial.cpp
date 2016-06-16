@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+
 using namespace std;
 
 typedef struct Node *PtrToNode;
@@ -60,93 +61,78 @@ Polynomial AddPolynomial(const Polynomial poly1, const Polynomial poly2) {
     PtrToNode ptr1 = poly1->Next;   // 取第一个结点
     PtrToNode ptr2 = poly2->Next;   // 取第一个结点
     // 两个指针同时移动(相互制约)
-    while(ptr1!=NULL && ptr2!=NULL)
-    {
-        PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
-        if(ptr1->Exponent > ptr2->Exponent)
-        {
+    while (ptr1 != NULL && ptr2 != NULL) {
+        PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
+        if (ptr1->Exponent > ptr2->Exponent) {
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient;
             ptr1 = ptr1->Next;
-        } else if(ptr1->Exponent < ptr2->Exponent)
-        {
+        } else if (ptr1->Exponent < ptr2->Exponent) {
             temp->Exponent = ptr2->Exponent;
             temp->Coefficient = ptr2->Coefficient;
             ptr2 = ptr2->Next;
-        } else
-        {
+        } else {
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient + ptr2->Coefficient;
             ptr1 = ptr1->Next;
             ptr2 = ptr2->Next;
         }
         temp->Next = NULL;
-        if(temp->Coefficient!=0)            // 如果系数已为0,则无需再插入到多项式中
-            InsertNode(temp,polynomial);
+        if (temp->Coefficient != 0)            // 如果系数已为0,则无需再插入到多项式中
+            InsertNode(temp, polynomial);
     }
-    if(ptr1==NULL)
-    {
-        while(ptr2!=NULL)
-        {
-            PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
+    if (ptr1 == NULL) {
+        while (ptr2 != NULL) {
+            PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
             temp->Exponent = ptr2->Exponent;
             temp->Coefficient = ptr2->Coefficient;
-            temp->Next=NULL;
+            temp->Next = NULL;
             ptr2 = ptr2->Next;
-            InsertNode(temp,polynomial);
+            InsertNode(temp, polynomial);
         }
     }
-    if(ptr2==NULL)
-    {
-        while(ptr1!=NULL)
-        {
-            PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
+    if (ptr2 == NULL) {
+        while (ptr1 != NULL) {
+            PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient;
-            temp->Next=NULL;
+            temp->Next = NULL;
             ptr1 = ptr1->Next;
-            InsertNode(temp,polynomial);
+            InsertNode(temp, polynomial);
         }
     }
     return polynomial;
 }
 
 // 多项式的减法
-Polynomial SubPolynomial(const Polynomial poly1, const Polynomial poly2)
-{
+Polynomial SubPolynomial(const Polynomial poly1, const Polynomial poly2) {
     Polynomial polynomial = MakeEmpty();
     PtrToNode ptr1 = poly1->Next;   // 取第一个结点
     PtrToNode ptr2 = poly2->Next;   // 取第一个结点
     // 两个指针同时移动(相互制约)
-    while(ptr1!=NULL && ptr2!=NULL)
-    {
-        PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
-        if(ptr1->Exponent > ptr2->Exponent)
-        {
+    while (ptr1 != NULL && ptr2 != NULL) {
+        PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
+        if (ptr1->Exponent > ptr2->Exponent) {
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient;
             ptr1 = ptr1->Next;
-        } else if(ptr1->Exponent < ptr2->Exponent)
-        {
+        } else if (ptr1->Exponent < ptr2->Exponent) {
             temp->Exponent = ptr2->Exponent;
             temp->Coefficient = -ptr2->Coefficient;
             ptr2 = ptr2->Next;
-        } else
-        {
+        } else {
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient - ptr2->Coefficient;
             ptr1 = ptr1->Next;
             ptr2 = ptr2->Next;
         }
-            temp->Next = NULL;
-            if(temp->Coefficient!=0)             // 如果系数已为0,则无需再插入到多项式中
-                InsertNode(temp, polynomial);
+        temp->Next = NULL;
+        if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            InsertNode(temp, polynomial);
     }
-    if(ptr1==NULL)
-    {
-        while(ptr2!=NULL)
-        {
-            PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
+    if (ptr1 == NULL) {
+        while (ptr2 != NULL) {
+            PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
             temp->Exponent = ptr2->Exponent;
             temp->Coefficient = -ptr2->Coefficient;
             temp->Next = NULL;
@@ -155,11 +141,9 @@ Polynomial SubPolynomial(const Polynomial poly1, const Polynomial poly2)
         }
     }
 
-    if(ptr2==NULL)
-    {
-        while(ptr1!=NULL)
-        {
-            PtrToNode temp = (PtrToNode)malloc(sizeof(struct Node));
+    if (ptr2 == NULL) {
+        while (ptr1 != NULL) {
+            PtrToNode temp = (PtrToNode) malloc(sizeof(struct Node));
             temp->Exponent = ptr1->Exponent;
             temp->Coefficient = ptr1->Coefficient;
             temp->Next = NULL;
@@ -175,7 +159,7 @@ int main() {
     Polynomial polynomial2 = MakeEmpty();
 
     // 构建多项式1
-    for (int i = 3; i < 18; i=i+2) {
+    for (int i = 3; i < 18; i = i + 2) {
         PtrToNode node = (PtrToNode) malloc(sizeof(struct Node));
         node->Coefficient = i;  // 系数
         node->Exponent = i;     // 指数
@@ -184,7 +168,7 @@ int main() {
     }
 
     // 构建多项式2
-    for (int i = 1; i < 20; i=i+3) {
+    for (int i = 1; i < 20; i = i + 3) {
         PtrToNode node = (PtrToNode) malloc(sizeof(struct Node));
         node->Coefficient = i;  // 系数
         node->Exponent = i;     // 指数
