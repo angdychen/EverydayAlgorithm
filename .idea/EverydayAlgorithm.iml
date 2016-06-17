@@ -2,8 +2,8 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第三章表ADT/链表/list.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第三章表ADT/链表/list.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第三章表ADT/多项式/polynomial.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第三章表ADT/多项式/polynomial.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
