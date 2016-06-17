@@ -119,7 +119,13 @@ Polynomial AddPolynomial(const Polynomial poly1, const Polynomial poly2)
             temp->Coefficient = ptr2->Coefficient;
             temp->Next = NULL;
             ptr2 = ptr2->Next;
-            InsertNode(temp, polynomial);
+            if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            {
+                InsertNode(temp, polynomial);
+            } else
+            {
+                free(temp);                        // free(P)的结果是:P正在指向的地址没有变,但是该地址处的数据此时已经无定义了
+            }
         }
     }
     if (ptr2 == NULL)
@@ -131,7 +137,13 @@ Polynomial AddPolynomial(const Polynomial poly1, const Polynomial poly2)
             temp->Coefficient = ptr1->Coefficient;
             temp->Next = NULL;
             ptr1 = ptr1->Next;
-            InsertNode(temp, polynomial);
+            if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            {
+                InsertNode(temp, polynomial);
+            } else
+            {
+                free(temp);                        // free(P)的结果是:P正在指向的地址没有变,但是该地址处的数据此时已经无定义了
+            }
         }
     }
     return polynomial;
@@ -182,7 +194,13 @@ Polynomial SubPolynomial(const Polynomial poly1, const Polynomial poly2)
             temp->Coefficient = -ptr2->Coefficient;
             temp->Next = NULL;
             ptr2 = ptr2->Next;
-            InsertNode(temp, polynomial);
+            if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            {
+                InsertNode(temp, polynomial);
+            } else
+            {
+                free(temp);                        // free(P)的结果是:P正在指向的地址没有变,但是该地址处的数据此时已经无定义了
+            }
         }
     }
 
@@ -195,7 +213,13 @@ Polynomial SubPolynomial(const Polynomial poly1, const Polynomial poly2)
             temp->Coefficient = ptr1->Coefficient;
             temp->Next = NULL;
             ptr1 = ptr1->Next;
-            InsertNode(temp, polynomial);
+            if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            {
+                InsertNode(temp, polynomial);
+            } else
+            {
+                free(temp);                        // free(P)的结果是:P正在指向的地址没有变,但是该地址处的数据此时已经无定义了
+            }
         }
     }
     return polynomial;
@@ -216,7 +240,13 @@ Polynomial MultPolynomial(const Polynomial poly1, const Polynomial poly2)
             temp->Exponent = ptr1->Exponent + ptr2->Exponent;               // 指数相加
             temp->Coefficient = ptr1->Coefficient * ptr2->Coefficient;      // 系数相乘
             temp->Next = NULL;
-            InsertNode(temp, polynomial);
+            if (temp->Coefficient != 0)             // 如果系数已为0,则无需再插入到多项式中
+            {
+                InsertNode(temp, polynomial);
+            } else
+            {
+                free(temp);                        // free(P)的结果是:P正在指向的地址没有变,但是该地址处的数据此时已经无定义了
+            }
             ptr2 = ptr2->Next;
         }
         result = AddPolynomial(result, polynomial);

@@ -24,7 +24,7 @@ int main()
     }
 
     // 构建多项式2
-    for (int i = 1; i < 10; i = i + 3)
+    for (int i = 0; i < 10; i = i + 3)
     {
         PtrToNode node = (PtrToNode) malloc(sizeof(struct Node));
         node->Coefficient = i;  // 系数
