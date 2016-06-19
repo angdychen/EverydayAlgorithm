@@ -62,5 +62,5 @@ int main()
     int next[255];
     char string1[] = "8abcdefgi";
     char string2[] = "1i";
-    cout << "KMP算法匹配标:" << indexKMP(string1, string2, 1);
+    cout << "KMP算法匹下标:" << indexKMP(string1, string2, 1);
 }
