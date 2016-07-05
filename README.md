@@ -36,16 +36,15 @@
 4. [第四章 树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91)
 	* [二叉树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91)
 		<font color=BurlyWood>
-		
-		1.  二叉树的创建
-		2.  先序遍历（递归，非递归）
-		3.  中序遍历（递归，非递归）
-		4.  后序遍历（递归，非递归）
-		5.  层次遍历
-		6.  求二叉树深度
-		7.  求二叉树的宽度
-		8.  求二叉树中结点个数
-		9.  求二叉树第K层节点的个数
+		1. 二叉树的创建
+		2. 先序遍历（递归，非递归）
+		3. 中序遍历（递归，非递归）
+		4. 后序遍历（递归，非递归）
+		5. 层次遍历
+		6. 求二叉树深度
+		7. 求二叉树的宽度
+		8. 求二叉树中结点个数
+		9. 求二叉树第K层节点的个数
 		1. 求二叉树中叶子节点的个数
 		  
 		</font>
