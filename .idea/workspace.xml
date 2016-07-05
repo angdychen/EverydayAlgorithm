@@ -11,14 +11,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234a48ee-944e-4994-b958-d37484ed8305" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/EverydayAlgorithm.iml" afterPath="$PROJECT_DIR$/.idea/EverydayAlgorithm.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithm/串/KMP算法/KMP.cpp" afterPath="$PROJECT_DIR$/Algorithm/串/KMP算法/KMP.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithm/第4章树/二叉树/binaryTree.cpp" afterPath="$PROJECT_DIR$/Algorithm/第4章树/二叉树/binaryTree.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="234a48ee-944e-4994-b958-d37484ed8305" name="Default" comment="" />
     <ignored path="EverydayAlgorithm.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
