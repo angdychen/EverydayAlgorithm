@@ -10,8 +10,9 @@ void getNext(char T[], int *next)
 {
     int i = 1;      // 后缀       (注意,整个过程中i>j)
     int j = 0;      // 前缀
-    int tLength = T[0] - '0';
+    int tLength = T[0] - '0';       // '6' - '0' = 6
     next[1] = 0;    // 固定数
+    cout << "i: " << next[i]  << " ,";
     while (i < tLength)   // T[0]中存放的字符串的长度
     {
         if (j == 0 || T[i] == T[j])
@@ -19,12 +20,14 @@ void getNext(char T[], int *next)
             ++i;
             ++j;
             next[i] = j;
+            cout << "i: " << next[i]  << " ,";
         }
         else                    // 如果遇到不相等
         {
             j = next[j];        // 一定要理解这里( 如果没找到则j回溯,而i整个过程中不回)
         }
     }
+    cout << "" << endl;
 }
 
 // 得到索引位置
@@ -60,8 +63,8 @@ int indexKMP(char S[], char T[], int pos)
 int main()
 {
     int next[255];
-    char string1[] = "9abcdabcde";
-    char string2[] = "3cde";
+    char string1[] = "9ababababc";
+    char string2[] = "9abaabaaba";
     int pos = indexKMP(string1, string2, 1);
     cout << "KMP算法匹下标:" << pos << endl;
 }

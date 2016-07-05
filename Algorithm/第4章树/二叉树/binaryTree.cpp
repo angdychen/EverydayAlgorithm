@@ -1,4 +1,4 @@
-// 二叉树的定义和基本操作:
+// 二叉树的定义和基本操作:(二叉树都是递归定义的,基本操作中众多递归思想)
 // 1. 创建一颗二叉树
 // 2. 先序遍历
 // 3. 中序遍历
@@ -7,9 +7,9 @@
 // 6. 求二叉树深度
 // 7. 求二叉树的宽度
 // 8. 求二叉树中结点个数
-// 9. 求二叉树第K层节点的个数
+// 9. 求二叉树第K层节点个数
 // 10. 求二叉树中叶子节点的个数
-// 测试数据:A↙ B↙ *↙ C↙ D↙ *↙ *↙ *↙ E↙ *↙ F↙ G↙ H↙ *↙ *↙ K↙ *↙ *↙ *↙(下面数据,直接复制粘贴到console即可)
+// 测试数据:(下面数据,直接复制粘贴到console即可)
 /*
 A
 B
@@ -107,7 +107,22 @@ void PreOrder(Tree T)
             stackNode.pop();
             node = node->Right;
         }
+    }
+}
 
+// 2.先序遍历(非递归版)第二种解法
+void PreOrder2(Tree T)
+{
+    stack<PtrToNode> stack;
+    PtrToNode node;
+    if (T != NULL) stack.push(T);
+    while (!stack.empty())
+    {
+        node = stack.top();
+        stack.pop();
+        cout << node->Element << " ";
+        if (node->Right != NULL) stack.push(node->Right);
+        if (node->Left != NULL) stack.push(node->Left);
     }
 }
 
@@ -135,14 +150,13 @@ void InOrder(Tree T)
             node = node->Left;
         }
         else
-        {
+        {   // 弹出元素直接找其右边的元素
             node = stackNode.top();
             stackNode.pop();
             cout << node->Element << " ";
             node = node->Right;
         }
     }
-
 }
 
 // 4.后序遍历(递归版)
@@ -186,7 +200,7 @@ void PostOrder(Tree T)
 
 // 5.层次遍历(原本以为好难,写起来原来这么简单,so easy)
 /* 1.相当于广度优先搜索,使用队列实现。
- * 2.先将跟节点入队
+ * 2.先将根节点入队
  * 3.队列不为空时,弹出一个节点
  * 4.将其左结点入队,再将其右结点入队
  * 5.循环执行,直到队列为空
@@ -219,14 +233,13 @@ void LevelTraverse(Tree T)
 int GetDepth(Tree T)
 {
     int leftDepth = 0, rightDepth = 0;
-    if (T == NULL) return 0;
+    if (T == NULL) return 0;    // T == NULL 条件
     else
     {
         leftDepth = GetDepth(T->Left);
         rightDepth = GetDepth(T->Right);
         return (leftDepth > rightDepth ? leftDepth : rightDepth) + 1;
     }
-
 }
 
 // 7.求解二叉树的宽度(类似于层次遍历算法)
@@ -272,8 +285,34 @@ int GetWidth(Tree T)
  */
 int GetNodeNum(Tree T)
 {
-    if(T==NULL) return 0;
+    if (T == NULL) return 0;
     return GetNodeNum(T->Left) + GetNodeNum(T->Right) + 1;
+}
+
+// 9. 求二叉树第K层节点的个数
+/*递归解法：
+（1）如果二叉树为空或者k<1返回0
+（2）如果二叉树不为空并且k==1，返回1
+（3）如果二叉树不为空且k>1，返回左子树中k-1层的节点个数与右子树k-1层节点个数之和
+ * */
+int GetNodeNumKthLevel(Tree T, int K)
+{
+    if (T == NULL || K < 1) return 0;
+    if (K == 1) return 1;
+    return GetNodeNumKthLevel(T->Left, K - 1) + GetNodeNumKthLevel(T->Right, K - 1);
+}
+
+// 10.求解二叉树中叶子节点的个数
+/*递归解法：
+（1）如果二叉树为空，返回0
+（2）如果二叉树不为空且左右子树为空，返回1
+（3）如果二叉树不为空，且左右子树不同时为空，返回左子树中叶子节点个数加上右子树中叶子节点个数
+ * */
+int GetLeafNodeNum(Tree T)
+{
+    if (T == NULL) return 0;
+    if (T->Left == NULL && T->Right == NULL) return 1;
+    return GetLeafNodeNum(T->Left) + GetLeafNodeNum(T->Right);
 }
 
 int main()
@@ -292,22 +331,31 @@ int main()
     cout << endl;
 
     cout << "2.先序遍历(非递归): ";
+    PreOrder2(tree);
+    cout << endl;
+    cout << "2.先序遍历(解法二): ";
     PreOrder(tree);
     cout << endl;
+
     cout << "3.中序遍历(非递归): ";
     InOrder(tree);
     cout << endl;
+
     cout << "4.后序遍历(非递归): ";
     PostOrder(tree);
     cout << endl;
 
+    cout << endl;
     cout << "5.层次遍历(广度优先搜索): ";
     LevelTraverse(tree);
     cout << endl;
-
     cout << "6.二叉树的深度为(根结点的深度为0): " << GetDepth(tree) - 1 << endl;
     cout << "7.二叉树的宽度为: " << GetWidth(tree) << endl;
+
+    cout << endl;
     cout << "8.二叉树的结点个数为: " << GetNodeNum(tree) << endl;
+    cout << "9.二叉树第K层节点个数: " << GetNodeNumKthLevel(tree, 3) << endl;
+    cout << "10.二叉树中叶子节点的个数: " << GetLeafNodeNum(tree) << endl;
 
     return 0;
 }

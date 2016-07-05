@@ -1,2 +1,51 @@
-# EverydayAlgorithm
-# 6.16号 P39 链表举例: 1.多项式
+
+#前言
+***
+&emsp;&emsp;&ensp;本文为**《数据结构与算法分析——c语言描述》**一书中核心代码的实现，博文将伴随着代码的提交持续进行更新，同时也真诚希望大家能对其中存在的问题提出建议与意见！
+
+**[作者：]&emsp;andy**
+
+**[联系方式：]&emsp;<angdychen@gmail.com>**
+
+**[更新时间：]&emsp;2016年7月4日**
+</br>
+> ####&emsp;&emsp;If you want to become a good programmer, you can spend 10 years programming, or spend 2 years programming and learning algorithms.
+> 
+***
+
+#目录
+
+1. [第一章 引言](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm)
+	<br/><br/>
+2. [第二章 算法分析](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90)
+ 
+ 	* [折半查找](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE)
+	* [数组主元](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E7%BB%84%E4%B8%BB%E5%85%83)
+	* [最大子序列和](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C)
+	* [汉诺塔](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%B1%89%E8%AF%BA%E5%A1%94)
+	* [约瑟夫环](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF)
+	* [裴波那契数列](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC2%E7%AB%A0%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E8%A3%B4%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97)
+	</br><br/>
+3. [第三章 表ADT](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC3%E7%AB%A0%E8%A1%A8ADT)
+	
+	* [链表](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC3%E7%AB%A0%E8%A1%A8ADT/%E9%93%BE%E8%A1%A8)
+	* [栈](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC3%E7%AB%A0%E8%A1%A8ADT/%E6%A0%88)
+	* [队列](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC3%E7%AB%A0%E8%A1%A8ADT/%E9%98%9F%E5%88%97)
+	* [多项式](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC3%E7%AB%A0%E8%A1%A8ADT/%E5%A4%9A%E9%A1%B9%E5%BC%8F)
+	</br><br/>
+4. [第四章 树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91)
+	* [二叉树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91)
+		<font color=BurlyWood>
+		
+		1.  二叉树的创建
+		2.  先序遍历（递归，非递归）
+		3.  中序遍历（递归，非递归）
+		4.  后序遍历（递归，非递归）
+		5.  层次遍历
+		6.  求二叉树深度
+		7.  求二叉树的宽度
+		8.  求二叉树中结点个数
+		9.  求二叉树第K层节点的个数
+		1. 求二叉树中叶子节点的个数
+		  
+		</font>
