@@ -51,7 +51,6 @@
 
 5. [第七章 排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
 	* [a. 插入类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/1.%E6%8F%92%E5%85%A5%E7%B1%BB%E6%8E%92%E5%BA%8F)
-		<font color=BurlyWood>
 		* 直接插入排序
 		* 希尔排序
 	* [b. 选择类排序]()
@@ -66,4 +65,3 @@
 		* 桶式排序
 		* 基数排序
 		
-		</font>
