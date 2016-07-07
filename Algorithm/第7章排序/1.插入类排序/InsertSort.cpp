@@ -18,9 +18,12 @@ void InsertionSort(ElementType A[], int N)
     for (i = 1; i < N; i++)
     {
         temp = A[i];
-        for (j = i - 1; j >= 0 && temp < A[j]; j--)
-            A[j + 1] = A[j];
-        A[j + 1] = temp;
+        for (j = i; j > 0; j--)
+        {
+            if (temp < A[j - 1]) A[j] = A[j - 1];
+            else break;
+        }
+        A[j] = temp;
     }
 }
 
