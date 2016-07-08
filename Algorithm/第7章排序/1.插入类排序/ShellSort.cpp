@@ -16,9 +16,10 @@ void ShellSort(ElementType A[], int N)
 {
     int i, j, Increment;
     ElementType Tmp;
-    for (Increment = N / 2; Increment > 0; Increment /= 2) // 增量
+    for (Increment = N / 2; Increment > 0; Increment /= 2)          // 增量
     {
-        for (i = Increment; i < N; i++)                             // 直接排序
+        cout << endl;
+        for (i = Increment; i < N; i++)                             // 直接排序(参见InsertSort)
         {
             Tmp = A[i];
             for (j = i; j >= Increment; j -= Increment)
@@ -28,7 +29,7 @@ void ShellSort(ElementType A[], int N)
                 else
                     break;
             }
-            A[j] = Tmp;
+            A[j] = Tmp;                                             // 直接插入排序的明显标志
         }
     }
 }
