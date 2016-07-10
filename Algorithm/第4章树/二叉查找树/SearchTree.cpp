@@ -6,8 +6,6 @@
 
 using namespace std;
 
-#include <vector>
-
 struct TreeNode;
 typedef struct TreeNode *Position;
 typedef struct TreeNode *SearchTree;
@@ -16,17 +14,11 @@ typedef struct TreeNode *Tree;
 typedef char ElementType;
 
 SearchTree MakeEmpty(SearchTree T);
-
 Position Find(ElementType X, SearchTree T);
-
 Position FindMin(SearchTree T);
-
 Position FindMax(SearchTree T);
-
 SearchTree Insert(ElementType X, SearchTree T);
-
 SearchTree Delete(ElementType X, SearchTree T);
-
 ElementType Retrieve(Position P);
 
 struct TreeNode
@@ -116,7 +108,6 @@ SearchTree Delete(ElementType X, SearchTree T)
     return T;
 }
 
-// 2.先序遍历(递归版)
 void PreOrderTraverse(Tree T)
 {
     if (T != NULL)
@@ -127,8 +118,6 @@ void PreOrderTraverse(Tree T)
     }
 }
 
-
-// 3.中序遍历(递归版)
 void InOrderTraverse(Tree T)
 {
     if (T != NULL)
@@ -137,10 +126,6 @@ void InOrderTraverse(Tree T)
         cout << T->Element << " ";
         InOrderTraverse(T->Right);
     }
-}
-
-bool Find(vector<vector<int> > array,int target) {
-
 }
 
 int main()

@@ -7,7 +7,7 @@
 
 **[ 联系方式：]&emsp;<angdychen@gmail.com>**
 
-**[ 更新时间：]&emsp;2016年7月4日**
+**[ 更新时间：]&emsp;2016年7月10日**
 </br>
 > ####&emsp;&emsp;If you want to become a good programmer, you can spend 10 years programming, or spend 2 years programming and learning algorithms.
 
@@ -46,20 +46,22 @@
 		8. 求二叉树中结点个数
 		9. 求二叉树第K层节点的个数
 		1. 求二叉树中叶子节点的个数
+		2. 判断两个二叉树是否相等（结构，对应元素都相同）
 		
 		</font>
+	* [二叉查找树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91)
 
 5. [第七章 排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
 	1. [插入类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/1.%E6%8F%92%E5%85%A5%E7%B1%BB%E6%8E%92%E5%BA%8F)
 		* 直接插入排序
 		* 希尔排序
-	2. [选择类排序]()
+	2. [选择类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/2.%E9%80%89%E6%8B%A9%E7%B1%BB%E6%8E%92%E5%BA%8F)
 	    * 简单选择排序
 	    * 堆排序
-	3. [交换类排序]()
+	3. [交换类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/3.%E4%BA%A4%E6%8D%A2%E7%B1%BB%E6%8E%92%E5%BA%8F)
 		* 冒泡排序
 		* 快速排序
-	4. [归并类排序]()
+	4. [归并类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/4.%E5%BD%92%E5%B9%B6%E7%B1%BB%E6%8E%92%E5%BA%8F)
 		* 归并排序
 	5. [基数类排序]()
 		* 桶式排序
