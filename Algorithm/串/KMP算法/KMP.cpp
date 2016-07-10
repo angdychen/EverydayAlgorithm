@@ -1,4 +1,5 @@
 //
+// 时间复杂度: O(M+N)
 // Created by andy on 16/6/19.
 //
 
@@ -24,7 +25,7 @@ void getNext(char T[], int *next)
         }
         else                    // 如果遇到不相等
         {
-            j = next[j];        // 一定要理解这里( 如果没找到则j回溯,而i整个过程中不回)
+            j = next[j];        // 一定要理解这里( 如果没找到则j回溯,而i整个过程中不回溯)
         }
     }
     cout << "" << endl;

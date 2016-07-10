@@ -144,7 +144,7 @@ static int majEle_recursice(int a[], int n)
 }
 
 int main() {
-    int a[9] = {2,1,2,9,2,3,2};
+    int a[9] = {2,1,2,9,2,3,2,2,5};
     cout << "majEle_exhaust: " << majEle_exhaust(a, 9) << endl;
     cout << "majEle_recursice: " << majEle_recursice(a, 9) << endl;
     cout << "majEle_loop: " << majEle_loop(a, 9) << endl;
