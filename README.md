@@ -66,5 +66,9 @@
 	5. [基数类排序]()
 		* 桶式排序
 		* 基数排序
+6. [补充: 串](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E4%B8%B2/KMP%E7%AE%97%E6%B3%95)
+	1. [字符串匹配算法](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E4%B8%B2/KMP%E7%AE%97%E6%B3%95)
+		* BF朴素字符串匹配算法
+		* KMP字符串匹配算法
 		
 		
