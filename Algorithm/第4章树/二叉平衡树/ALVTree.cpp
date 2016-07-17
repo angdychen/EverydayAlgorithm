@@ -14,6 +14,7 @@ typedef struct AVLNode *Tree;
 
 typedef char ElementType;
 
+/****************** 数据结构 ********************/
 struct AVLNode
 {
     ElementType Element;
@@ -22,26 +23,25 @@ struct AVLNode
     int Height;
 };
 
+
+/****************** 函数定义 ********************/
+// 清空一棵二叉树
 AVLTree MakeEmpty(AVLTree T);
-
+// 查找指定元素
 Position Find(ElementType X, AVLTree T);
-
+// 查找二叉树中的最小值
 Position FindMin(AVLTree T);
-
+// 查找二叉树中的最大值
 Position FindMax(AVLTree T);
-
+// 往二叉平衡T中插入元素X(重复元素不插入)
 AVLTree Insert(ElementType X, AVLTree T);
-
+// 删除二叉平衡树T中的元素X
 AVLTree Delete(ElementType X, AVLTree T);
-
-AVLTree FindMin(AVLTree T);
-
-AVLTree FindMax(AVLTree T);
-
-ElementType Retrieve(Position);
-
+// 查找位于位置P处的元素
+ElementType Retrieve(Position P);
+// 获取节点P的所在高度
 int Height(Position P);
-
+// 获取较大元素ß
 int Max(int a, int b);
 
 // 左节点(最左边的节点就是最小的元素)
@@ -89,15 +89,14 @@ Position SingleRotateWithRight(Position K1)
 }
 
 // 双旋转(左-右旋转)
-Position DoubleRotateWithRight(Position K1)
+Position DoubleRotateWithLeftRight(Position K1)
 {
     K1->Right = SingleRotateWithLeft(K1->Right);
     return SingleRotateWithRight(K1);
 }
 
-
 // 双旋转(右-左旋转)
-Position DoubleRotateWithLeft(Position K3)
+Position DoubleRotateWithRightLeft(Position K3)
 {
     K3->Left = SingleRotateWithRight(K3->Left);
     return SingleRotateWithLeft(K3);
@@ -127,7 +126,7 @@ AVLTree Insert(ElementType X, AVLTree T)
             if (X < T->Left->Element)
                 T = SingleRotateWithLeft(T);
             else
-                T = DoubleRotateWithLeft(T);
+                T = DoubleRotateWithRightLeft(T);
         }
     } else if (X > T->Element)
     {
@@ -137,7 +136,7 @@ AVLTree Insert(ElementType X, AVLTree T)
             if (X > T->Right->Element)
                 T = SingleRotateWithRight(T);
             else
-                T = DoubleRotateWithRight(T);
+                T = DoubleRotateWithLeftRight(T);
         }
     }
     // 如果相等就不插入
@@ -158,7 +157,7 @@ AVLTree Delete(ElementType X, AVLTree T)
         if (Height(T->Right) - Height(T->Left) == 2)
         {
             if (Height(T->Right->Left) > Height(T->Right->Right))
-                T = DoubleRotateWithRight(T);
+                T = DoubleRotateWithLeftRight(T);
             else
                 T = SingleRotateWithRight(T);
 
@@ -171,7 +170,7 @@ AVLTree Delete(ElementType X, AVLTree T)
         if (Height(T->Left) - Height(T->Right) == 2)
         {
             if (Height(T->Left->Right) > Height(T->Left->Left))
-                T = DoubleRotateWithLeft(T);
+                T = DoubleRotateWithRightLeft(T);
             else
                 T = SingleRotateWithLeft(T);
         }
@@ -247,20 +246,29 @@ int main()
         char a = arr[i] + '0';
         S = Insert(a, S);
     }
+    cout << "原AVL树为: "  << endl;
+    cout << "先序遍历: ";
     PreOrderTraverse(S);
     cout << endl;
+    cout << "中序遍历: ";
     InOrderTraverse(S);
+    cout << endl << endl;
 
-    cout << endl;
+    cout << "删除节点9后的AVL树为: "  << endl;
+    cout << "先序遍历: ";
     S = Delete('9', S);
     PreOrderTraverse(S);
     cout << endl;
+    cout << "中序遍历: ";
     InOrderTraverse(S);
-    cout << endl;
+    cout << endl << endl;
 
+    cout << "删除节点5后的AVL树为: "  << endl;
+    cout << "先序遍历: ";
     S = Delete('5', S);
     PreOrderTraverse(S);
     cout << endl;
+    cout << "中序遍历: ";
     InOrderTraverse(S);
 
 }
