@@ -185,7 +185,7 @@ AVLTree Delete(ElementType X, AVLTree T)
             TmpCell = FindMin(TmpCell);
             T->Element = TmpCell->Element;
             T->Height = TmpCell->Height;
-            T->Right = Delete(T->Height, T->Right);//删除后继节点
+            T->Right = Delete(T->Element, T->Right);//删除后继节点
         } else
         {   //右子树为空的情况，free节点，返回被删除节点的左节点
             //这也是真正删除节点的地方
@@ -196,7 +196,7 @@ AVLTree Delete(ElementType X, AVLTree T)
         }
     }
     // ************ 以上部分和删除二叉查找树过程完全一样 **************  //
-    //每次删除之后，都要更新ßΩ节点的高度
+    //每次删除之后，都要更新节点的高度
     T->Height = Max(Height(T->Left), Height(T->Right)) + 1;
     return T;
 
@@ -258,7 +258,7 @@ int main()
     InOrderTraverse(S);
     cout << endl;
 
-    S = Delete('0', S);
+    S = Delete('5', S);
     PreOrderTraverse(S);
     cout << endl;
     InOrderTraverse(S);
