@@ -13,13 +13,7 @@ typedef struct TreeNode *Tree;
 
 typedef char ElementType;
 
-SearchTree MakeEmpty(SearchTree T);
-Position Find(ElementType X, SearchTree T);
-Position FindMin(SearchTree T);
-Position FindMax(SearchTree T);
-SearchTree Insert(ElementType X, SearchTree T);
-SearchTree Delete(ElementType X, SearchTree T);
-ElementType Retrieve(Position P);
+/****************** 数据结构 ********************/
 
 struct TreeNode
 {
@@ -27,6 +21,25 @@ struct TreeNode
     SearchTree Left;
     SearchTree Right;
 };
+
+/****************** 函数定义 ********************/
+
+// 清空一颗二叉树
+SearchTree MakeEmpty(SearchTree T);
+// 查找指定元素
+Position Find(ElementType X, SearchTree T);
+// 查找树中最小的元素,并返回其结点
+Position FindMin(SearchTree T);
+// 查找树中最大的元素,并返回其结点
+Position FindMax(SearchTree T);
+// 向当前二叉查找树中,插入指定元素
+SearchTree Insert(ElementType X, SearchTree T);
+// 删除指定元素
+SearchTree Delete(ElementType X, SearchTree T);
+// 查找指定位置上的元素
+ElementType Retrieve(Position P);
+
+/****************** 函数实现 ********************/
 
 SearchTree MakeEmpty(SearchTree T)
 {
@@ -93,6 +106,7 @@ SearchTree Delete(ElementType X, SearchTree T)
     else if (X < T->Element) T->Left = Delete(X, T->Left);
     else if (X > T->Element) T->Right = Delete(X, T->Right);
     else // 如果找到了要删除的元素
+        // (本质上只需要考虑, 右子树为空 和 右子树不为空两种情况)
     if (T->Left != NULL && T->Right != NULL)
     {
         TmpCell = FindMin(T->Right);
@@ -133,6 +147,7 @@ int main()
     int i;
     SearchTree S = NULL;
 
+    // 随机插入一批元素(重复元素不插入)
     for (i = 0; i < 10; i++)
     {
         S = Insert(48 + rand() % 9, S);

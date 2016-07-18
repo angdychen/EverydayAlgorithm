@@ -50,6 +50,7 @@
 		
 		</font>
 	* [二叉查找树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91)
+	* [二叉平衡树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91)
 
 5. [第七章 排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
 	1. [插入类排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F/1.%E6%8F%92%E5%85%A5%E7%B1%BB%E6%8E%92%E5%BA%8F)
@@ -66,6 +67,7 @@
 	5. [基数类排序]()
 		* 桶式排序
 		* 基数排序
+		
 6. [补充: 串](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E4%B8%B2/KMP%E7%AE%97%E6%B3%95)
 	1. [字符串匹配算法](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E4%B8%B2/KMP%E7%AE%97%E6%B3%95)
 		* BF朴素字符串匹配算法
