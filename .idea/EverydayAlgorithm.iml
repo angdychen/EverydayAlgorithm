@@ -2,7 +2,7 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第2章算法分析/数组主元/majEle.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第4章树/二叉查找树/SearchTree.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
