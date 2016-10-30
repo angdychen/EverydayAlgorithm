@@ -52,7 +52,7 @@
 	* [二叉查找树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91)
 	* [二叉平衡树](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC4%E7%AB%A0%E6%A0%91/%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91)
 
-5. [第七章 优先队列(堆)](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
+5. [第六章 优先队列(堆)](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
     1. [最小堆]()
 
 6. [第七章 排序](https://github.com/angdychen/EverydayAlgorithm/tree/master/Algorithm/%E7%AC%AC7%E7%AB%A0%E6%8E%92%E5%BA%8F)
