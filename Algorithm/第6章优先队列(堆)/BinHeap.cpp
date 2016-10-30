@@ -10,13 +10,26 @@ using namespace std;
 
 int main()
 {
-
     PriorityQueue H = Initialize(10);
-    for (int i = 10; i >0 ; i--)
+    for (int i = 10; i > 0; i--)
     {
         Insert(i, H);
     }
-    for(int i=1;i<11;i++)
+    for (int i = 1; i <= H->size; i++)
+    {
+        cout << H->Elements[i] << " ";
+    }
+
+    cout << endl;
+    DeleteMin(H);
+    for (int i = 1; i <= H->size; i++)
+    {
+        cout << H->Elements[i] << " ";
+    }
+
+    cout << endl;
+    DeleteMin(H);
+    for (int i = 1; i <= H->size; i++)
     {
         cout << H->Elements[i] << " ";
     }

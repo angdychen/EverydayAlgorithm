@@ -13,7 +13,6 @@
 
 using namespace std;
 
-
 struct HeapStruct;
 typedef struct HeapStruct *PriorityQueue;
 typedef int ElementType;
@@ -95,6 +94,31 @@ ElementType DeleteMin(PriorityQueue H)
     }
     H->Elements[i] = LastElement;
     return MinElement;
+}
+
+// 清空优先队列
+void MakeEmpty(PriorityQueue H)
+{
+    H->Size = 0;
+}
+
+// 判断是否为空队列
+int IsEmpty(PriorityQueue H)
+{
+    return H->Size == 0;
+}
+
+// 判读优先队列是否满
+int IsFull(PriorityQueue H)
+{
+    return H->Size == H->Capacity;
+}
+
+// 销毁优先队列
+void Destroy(PriorityQueue H)
+{
+    free(H->Elements);
+    free(H);
 }
 
 #endif //ALGORITHM_BINHEAP_H
