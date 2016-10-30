@@ -2,8 +2,7 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第4章树/二叉树/binaryTree.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第4章树/二叉树/BinaryTree.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algorithm/第2章算法分析/最大子序列和/maxSubSum.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
