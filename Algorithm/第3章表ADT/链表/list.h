@@ -8,35 +8,44 @@
 typedef int Element;
 
 // 节点定义
-typedef struct node {
+typedef struct node
+{
     Element data;
-    struct node * next;
-}Node;
+    struct node *next;
+} Node;
 
 // 定义节点类型指针
-typedef struct node * PtrToNode;
+typedef struct node *PtrToNode;
 typedef PtrToNode List;
 typedef PtrToNode Position;
 
 // 链表ADT
 List MakeEmpty();
+
 int IsEmpty(List L);
+
 int IsLast(Position p, List L);
 
 Position Find(Element x, List L);
+
 Position FindPrevious(Element x, List L);
 
 void Insert(Element x, List L);
+
 void Insert(Element x, List L, Position P);
 
 void Delete(Element x, List L);
+
 void DeleteList(List L);
 
 void TraversalList(List L);
 
 Position Header(List L);
+
 Position First(List L);
+
 Position Advance(Position P);
+
 Element Retrieve(Position P);
 
 List Reverse(List L);
@@ -45,8 +54,8 @@ List Reverse(List L);
 List MakeEmpty()
 {
     Position P;
-    P = (Position)malloc(sizeof(struct node));
-    if(P == NULL)
+    P = (Position) malloc(sizeof(struct node));
+    if (P == NULL)
         cout << "Out of space" << endl;
     P->data = 0;    // Header头指针数据域可利用(此处未利用)
     P->next = NULL;
@@ -84,7 +93,7 @@ Position FindPrevious(Element x, List L)
     Position P;
 
     P = L;
-    while(P->next != NULL && P->next->data != x)
+    while (P->next != NULL && P->next->data != x)
         P = P->next;
     return P;   // 若不存在则返回表尾指针
 }
@@ -93,7 +102,7 @@ Position FindPrevious(Element x, List L)
 Position FindLast(List L)
 {
     Position P = L;
-    while(P->next != NULL) P = P->next;
+    while (P->next != NULL) P = P->next;
     return P;
 }
 
@@ -102,7 +111,7 @@ void Delete(Element x, List L)
 {
     Position P, TmpCell;
     P = FindPrevious(x, L);
-    if(!IsLast(P, L))
+    if (!IsLast(P, L))
     {
         TmpCell = P->next;
         P->next = TmpCell->next;
@@ -115,8 +124,8 @@ void Delete(Element x, List L)
 void Insert(Element x, List L)
 {
     Position P = L, TmpCell;
-    while(L->next!=NULL) L = L->next;
-    TmpCell = (Position)malloc(sizeof(struct node));
+    while (L->next != NULL) L = L->next;
+    TmpCell = (Position) malloc(sizeof(struct node));
     TmpCell->data = x;
     TmpCell->next = NULL;
     L->next = TmpCell;
@@ -126,8 +135,8 @@ void Insert(Element x, List L)
 void Insert(Element x, List L, Position P)
 {
     Position TmpCell;
-    TmpCell = (Position)malloc(sizeof(struct node));
-    if(TmpCell == NULL)
+    TmpCell = (Position) malloc(sizeof(struct node));
+    if (TmpCell == NULL)
         cout << "Out of space" << endl;
 
     TmpCell->data = x;
@@ -141,7 +150,7 @@ void DeleteList(List L)
     Position P, Tmp;
     P = L->next;
     L->next = NULL;
-    while(P->next != NULL)
+    while (P->next != NULL)
     {
         Tmp = P->next;
         free(P);
@@ -149,11 +158,59 @@ void DeleteList(List L)
     }
 }
 
+// 删除表中某个值为X的元素(书中错误的代码)
+void DeleteX(List L, Element X)
+{
+    // 递归实现在单链表L中删除值为X的节点
+    node *p;
+    if (L == NULL) return;
+    if (L->data == X)
+    {
+        p = L;
+        L = L->next;
+        free(p);
+        DeleteX(L, X);
+    } else
+    {
+        DeleteX(L->next, X);
+    }
+}
+
+// 删除表中某个值为X的元素
+void DeleteXData(List L, Element X)
+{
+    if (L == NULL)
+        return;
+    node *p = L->next;
+    // 递归实现在单链表L中删除值为X的节点
+    if (L->next == NULL)
+    {
+        if (L->data == X)
+        {
+            L == NULL;
+            free(p);
+        }
+        else return;
+    } else
+    {
+        if (L->next->data == X)
+        {
+            L->next = L->next->next;
+            free(p);
+            DeleteXData(L, X);
+        } else
+        {
+            DeleteXData(L->next, X);
+        }
+    }
+}
+
 // 遍历链表
 void TraversalList(List L)
 {
     int count = 0;
-    for(Position TmpCell = L->next; TmpCell != NULL;  TmpCell = TmpCell->next) {
+    for (Position TmpCell = L->next; TmpCell != NULL; TmpCell = TmpCell->next)
+    {
         cout << TmpCell->data << " ";
         ++count;
     }
@@ -168,11 +225,11 @@ List Reverse(List L)
     Header = L;             // 得到头节点
     PreCell = L->next;      // 第一个节点
     CurCell = PreCell->next;                // 第二个节点
-    if(PreCell == NULL || CurCell == NULL)  // 如果0个或1个节点
+    if (PreCell == NULL || CurCell == NULL)  // 如果0个或1个节点
         return Header;
 
     PreCell->next = NULL;   // 特别注意第一个节点要回空(否则将进入死循环)
-    while(CurCell!=NULL)
+    while (CurCell != NULL)
     {
         NextCell = CurCell->next;
         CurCell->next = PreCell;
